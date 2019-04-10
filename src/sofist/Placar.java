@@ -13,6 +13,7 @@ public class Placar {
 	public int getTime1() {
 		return time1;
 	}
+	
 	public int getTime2() {
 		return time2;
 	}

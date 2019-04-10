@@ -16,11 +16,12 @@ public class Jogo {
 				t1 = false;
 				try {
 					time1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Time1 (0 a 10): "));
-					if (time1 != null && (time1 < 0 && time1 > 10)) { 
+					if (time1 != null && (time1 < 0 || time1 > 10)) { 
 						t1 = false;
 						JOptionPane.showMessageDialog(null,"Somente é possível informar valores entre 0 e 10 para Time1...", "Informação", JOptionPane.INFORMATION_MESSAGE);
+					} else {
+						t1 = true;
 					}
-					t1 = true;
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null,"O valor informado para o Time 1 deve ser um valor numérico...", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
@@ -31,11 +32,12 @@ public class Jogo {
 				t2 = false;
 				try {
 					time2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Time2 (0 a 10): "));
-					if (time2 != null && (time2 < 0 && time2 > 10)) { 
+					if (time2 != null && (time2 < 0 || time2 > 10)) { 
 						t2 = false;
 						JOptionPane.showMessageDialog(null,"Somente é possível informar valores entre 0 e 10 para Time2...", "Informação", JOptionPane.INFORMATION_MESSAGE);
+					} else {
+						t2 = true;
 					}
-					t2 = true;
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null,"O valor informado para o Time 2 deve ser um valor numérico...", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
