@@ -1,6 +1,6 @@
 package sofist;
 
-public class Placar implements Bolao {
+public class Placar {
 	
 	private int time1;
 	private int time2;
@@ -13,25 +13,14 @@ public class Placar implements Bolao {
 	public int getTime1() {
 		return time1;
 	}
-	public void setTime1(int time1) {
-		this.time1 = time1;
-	}
 	public int getTime2() {
 		return time2;
 	}
-	public void setTime2(int time2) {
-		this.time2 = time2;
-	}
-
-	@Override
-	public int calcularPontuacao(Placar aposta, Placar oficial) {
-		// TODO Auto-generated method stub
-		int contador = 0;
-		if (aposta.equals(oficial) || (aposta.getTime1() == oficial.getTime1() && aposta.getTime2() == oficial.getTime2()))
-			contador += 10;
+	
+	public interface Bolao {
 		
-				
-		return contador;
+		public int calcularPontuacao(Placar aposta, Placar oficial);
+		
 	}
 
 	@Override
@@ -42,7 +31,7 @@ public class Placar implements Bolao {
 		result = prime * result + time2;
 		return result;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -58,11 +47,5 @@ public class Placar implements Bolao {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
 
 }
